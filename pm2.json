@@ -1,0 +1,12 @@
+{
+  "name"        : "empty_pro",
+  "script"      : "app.js",
+  "cwd"         : "./empty_pro/", // 指定该app工作目录，这样pm2会相对这个目录去找脚本之类的。
+  "exec_mode"   : "cluster",
+  "instances"   : 1,
+  "env": {
+      "NODE_ENV": "development",
+      "DEBUG": "*",
+      "DEBUG_FD"  : 1
+  }
+}
