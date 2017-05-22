@@ -7,12 +7,12 @@ const config = require('../config');
 async function inoutLog(ctx, next){
   const start = new Date();
   console.log('此次请求的API: ', ctx.request.url);
-  global.Server.log.info(ctx.request.url, "inputData", ctx.request.body);
+  // global.Server.log.info(ctx.request.url, "inputData", ctx.request.body);
   await next();
   const ms = new Date() - start;
   console.log('此次请求的API : ' + ctx.request.url + ' , 此次请求花费的时间 : '+ ms + ' ms');
-  global.Server.log.speed(ctx.request.url , 'speed' , ms + 'ms');
-  global.Server.log.info(ctx.request.url, "outData", ctx.body);
+  // global.Server.log.speed(ctx.request.url , 'speed' , ms + 'ms');
+  // global.Server.log.info(ctx.request.url, "outData", ctx.body);
 }
 
 /**
@@ -27,10 +27,10 @@ async function errorHandle(ctx, next){
     if (process.env.NODE_ENV == "production"){
       //send email
     }
-    global.Server.log.error({
-      url: ctx.request.url,
-      error: err
-    });
+    // global.Server.log.error({
+    //   url: ctx.request.url,
+    //   error: err
+    // });
   }
 }
 
